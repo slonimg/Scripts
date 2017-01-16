@@ -1,0 +1,26 @@
+[core]
+	autocrlf = true
+[push]
+	default = simple
+[alias]
+	add-commit = !git add -A && git commit
+	ci = commit -m 
+	s = status -s
+	# List commits in short form, with colors and branch/tag annotations.
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	# List commits in long form, with colors and branch/tag annotations.
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	# List oneline commits showing dates (i.e. git lds -10)
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	# List oneline commits showing relative dates (i.e. git ld -10)
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	# Show modified files in last commit
+	dl = "!git ll -1"
+	# Show a diff last commit
+	dlc = diff --cached HEAD^
+	# Search/grep your entire codebase for a string:
+	gr = grep -Ii
+	# List all Aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	# Show last tag
+	lt = describe --tags --abbrev=0
