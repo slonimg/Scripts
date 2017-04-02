@@ -5,6 +5,7 @@ alias add="git add"
 alias branch="git checkout -b"
 alias rmbranch="git branch -d"
 alias merge="git merge --no-ff"
+alias reset="git reset HEAD"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion                                                                                                                                                                
