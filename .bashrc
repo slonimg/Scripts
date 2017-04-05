@@ -6,6 +6,8 @@ alias branch="git checkout -b"
 alias rmbranch="git branch -d"
 alias merge="git merge --no-ff"
 alias reset="git reset HEAD"
+alias compile-ssh-config='echo -n > ~/.ssh/config-compilation && cat ~/.ssh/*.config > ~/.ssh/config-compilation'
+alias ssh='compile-ssh-config && ssh -F ~/.ssh/config-compilation'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion                                                                                                                                                                
